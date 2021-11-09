@@ -1,0 +1,46 @@
+﻿body {
+    background-image: url('../Images/mountain background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.panel {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.heading {
+    font-size: 33px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    padding-left: 26%;
+    padding-top:20px;
+}
+.btnSignIn {
+    color: lightblue;
+    background-color: deepskyblue;
+    border: none;
+    color: black;
+    padding: 9px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    border-radius: 18px;
+    width: 120px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.Textboxes {
+    width: 160px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    border-radius: 10px;
+}
+input[type=text] {
+    border: 2px solid deepskyblue;
+    border-radius: 2px;
+}
