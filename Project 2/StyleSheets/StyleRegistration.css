@@ -1,0 +1,27 @@
+﻿body {
+    background-image: url('../Images/mountain background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.panel {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 502px;
+    height: 290px;
+    justify-items: center;
+    border-radius: 15px;
+}
+.heading {
+    font-size: 33px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 24%;
+    padding-top:20px;
+    margin-bottom:20px;
+}
+.btnFirstName {
+
+}

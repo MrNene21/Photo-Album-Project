@@ -10,7 +10,7 @@
     </style>
     </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="Login" runat="server">
         <asp:Panel ID="Panel1" runat="server" CssClass="panel">
             <br />
             <asp:Label ID="heading" runat="server" Text="Sign in to continue" CssClass="heading" Font-Bold="False" Font-Italic="False"></asp:Label>
