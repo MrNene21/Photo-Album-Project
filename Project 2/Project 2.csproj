@@ -73,6 +73,7 @@
     <Content Include="Images\icon.png" />
     <Content Include="Images\mountain background.jpg" />
     <Content Include="Start\Login.aspx" />
+    <Content Include="Start\Registration Page.aspx" />
     <Content Include="StyleSheets\StyleLogin.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -84,6 +85,13 @@
     </Compile>
     <Compile Include="Start\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Start\Registration Page.aspx.cs">
+      <DependentUpon>Registration Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Start\Registration Page.aspx.designer.cs">
+      <DependentUpon>Registration Page.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

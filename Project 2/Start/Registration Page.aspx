@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Project_2.Start.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration Page.aspx.cs" Inherits="Project_2.Start.Registration_Page" %>
 
 <!DOCTYPE html>
 
@@ -17,7 +17,7 @@
             <br />
             <br />
             <br />
-            <asp:TextBox ID="txtEmail" placeholder="Username" runat="server" CssClass="txtEmail"></asp:TextBox>
+            <asp:TextBox ID="txtEmail" placeholder="Email" runat="server" CssClass="txtEmail"></asp:TextBox>
             <br />
             <br />
             <br />

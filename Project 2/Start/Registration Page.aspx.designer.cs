@@ -11,7 +11,7 @@ namespace Project_2.Start
 {
 
 
-    public partial class Login
+    public partial class Registration_Page
     {
 
         /// <summary>

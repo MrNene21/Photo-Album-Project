@@ -2,6 +2,8 @@
     background-image: url('../Images/mountain background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment:fixed;
+  
 }
 .panel {
     background-color: white;
@@ -9,38 +11,63 @@
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+    width: 502px;
+    height: 290px;
+    justify-items: center;
+    border-radius: 15px;
 }
 .heading {
     font-size: 33px;
-    font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-left: 26%;
     padding-top:20px;
+    margin-bottom:20px;
 }
+.txtEmail {
+    width: 187px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    left: 147px;
+    top: 76px;
+    right: 160px;
+    height: 30px;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.txtPassword {
+    width: 187px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    left: 148px;
+    top: 119px;
+    height: 30px;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+input[type=text] {
+    border: 2px solid deepskyblue;
+    border-radius: 2px;
+}
+
 .btnSignIn {
-    color: lightblue;
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
     background-color: deepskyblue;
-    border: none;
     color: black;
     padding: 9px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 18px;
-    margin: 4px 2px;
+    margin: 20px 2px 4px 182px;
     border-radius: 18px;
-    width: 120px;
-    font-family: 'Times New Roman', Times, serif;
-    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.Textboxes {
-    width: 160px;
-    margin: 0 auto;
-    position: absolute;
-    text-align: center;
-    border-radius: 10px;
-}
-input[type=text] {
-    border: 2px solid deepskyblue;
-    border-radius: 2px;
-}
+
+    .btnSignIn:hover {
+        background-color: #0080ff;
+        font-weight: bold;
+    }
