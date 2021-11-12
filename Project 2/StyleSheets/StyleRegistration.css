@@ -87,10 +87,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 15px;
 }
-input[type=text] {
-    border: 2px solid deepskyblue;
-    border-radius: 2px;
-}
 .btnRegister {
     border-style: none;
     border-color: inherit;

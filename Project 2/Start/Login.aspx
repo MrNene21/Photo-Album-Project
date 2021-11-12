@@ -17,7 +17,7 @@
             <asp:TextBox ID="txtEmail" placeholder="Username" runat="server" CssClass="txtEmail"></asp:TextBox>
             <asp:TextBox ID="txtPassword" placeholder="Password" runat="server" CssClass="txtPassword" TextMode="Password"></asp:TextBox>
             <asp:Button ID="btnSignIn" runat="server" CssClass="btnSignIn" Text="Sign In" Width="133px" />
-            <asp:HyperLink runat="server" CssClass="hypertext" Text="Create an account."></asp:HyperLink>     
+            <asp:HyperLink runat="server" CssClass="hypertext" Text="Create an account." NavigateUrl="~/Start/Registration Page.aspx"></asp:HyperLink>     
         </asp:Panel>
     </form>
     </body>
