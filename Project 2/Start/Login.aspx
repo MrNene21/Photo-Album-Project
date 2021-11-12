@@ -14,18 +14,10 @@
         <asp:Panel ID="Panel1" runat="server" CssClass="panel">
             <br />
             <asp:Label ID="heading" runat="server" Text="Sign in to continue" CssClass="heading" Font-Bold="False" Font-Italic="False"></asp:Label>
-            <br />
-            <br />
-            <br />
             <asp:TextBox ID="txtEmail" placeholder="Username" runat="server" CssClass="txtEmail"></asp:TextBox>
-            <br />
-            <br />
-            <br />
-            <asp:TextBox ID="txtPassword" placeholder="Password" runat="server" CssClass="txtPassword"></asp:TextBox>
+            <asp:TextBox ID="txtPassword" placeholder="Password" runat="server" CssClass="txtPassword" TextMode="Password"></asp:TextBox>
             <asp:Button ID="btnSignIn" runat="server" CssClass="btnSignIn" Text="Sign In" Width="133px" />
-            <br />
-            <asp:HyperLink runat="server" ForeColor="#000099">HyperLink</asp:HyperLink>
-            
+            <asp:HyperLink runat="server" CssClass="hypertext" Text="Create an account."></asp:HyperLink>     
         </asp:Panel>
     </form>
     </body>
