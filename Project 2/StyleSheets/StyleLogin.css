@@ -86,3 +86,38 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 15px;
 }
+/*.checkbox {
+    margin: 0 auto;
+    position: absolute;
+    left: 330px;
+    top: 208px;
+}
+.lblShowpassword {
+    font-size: 16px;
+    margin: 0 auto;
+    position: absolute;
+    left: 350px;
+    top: 204px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}*/
+
+.regExValidator {
+    margin: 0 auto;
+    position: absolute;
+    left: 360px;
+    top: 95px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+.reqFValidator {
+    margin: 0 auto;
+    position: absolute;
+    left: 360px;
+    top: 138px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+    font-size: 14px;
+    font-weight:bold;
+}

@@ -24,6 +24,15 @@ namespace Project_2.Start
         protected global::System.Web.UI.HtmlControls.HtmlForm Register;
 
         /// <summary>
+        /// hfUserID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfUserID;
+
+        /// <summary>
         /// Panel1 control.
         /// </summary>
         /// <remarks>
@@ -94,5 +103,14 @@ namespace Project_2.Start
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRegister;
+
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
     }
 }

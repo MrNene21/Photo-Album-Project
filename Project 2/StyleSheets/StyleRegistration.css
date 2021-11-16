@@ -11,7 +11,7 @@
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     width: 502px;
-    height: 415px;
+    height: 470px;
     justify-items: center;
     border-radius: 15px;
 }
@@ -109,4 +109,76 @@
 .btnRegister:hover {
     background-color: #0080ff;
     font-weight: bold;
+}
+.hyperlink {
+    color: blue;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    left: 147px;
+    top: 376px;
+    right: 147px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+.reqValidatorFName {
+    margin: 0 auto;
+    position: absolute;
+    left: 360px;
+    top: 95px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+.reqValidatorLName {
+    margin: 0 auto;
+    position: absolute;
+    left: 360px;
+    top: 137px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+.regExEmail {
+    margin: 0 auto;
+    position: absolute;
+    left: 360px;
+    top: 179px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+.reqValidatorPassword {
+    margin: 0 auto;
+    position: absolute;
+    left: 360px;
+    top: 221px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+.reqValidatorConfPass {
+    margin: 0 auto;
+    position: absolute;
+    left: 360px;
+    top: 263px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+.lblMessage {
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    left: 147px;
+    top: 410px;
+    right: 147px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-weight:bold;
 }

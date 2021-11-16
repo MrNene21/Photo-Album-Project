@@ -14,10 +14,15 @@
         <asp:Panel ID="Panel1" runat="server" CssClass="panel">
             <br />
             <asp:Label ID="heading" runat="server" Text="Sign in to continue" CssClass="heading" Font-Bold="False" Font-Italic="False"></asp:Label>
-            <asp:TextBox ID="txtEmail" placeholder="Username" runat="server" CssClass="txtEmail"></asp:TextBox>
-            <asp:TextBox ID="txtPassword" placeholder="Password" runat="server" CssClass="txtPassword" TextMode="Password"></asp:TextBox>
-            <asp:Button ID="btnSignIn" runat="server" CssClass="btnSignIn" Text="Sign In" Width="133px" />
-            <asp:HyperLink runat="server" CssClass="hypertext" Text="Create an account." NavigateUrl="~/Start/Registration Page.aspx"></asp:HyperLink>     
+            <asp:TextBox ID="txtEmail" placeholder="Email address" runat="server" CssClass="txtEmail"></asp:TextBox>
+            <asp:TextBox ID="txtPassword" placeholder="Password" runat="server" CssClass="txtPassword"></asp:TextBox>
+            <asp:Button ID="btnSignIn" runat="server" CssClass="btnSignIn" Text="Sign In" Width="133px" OnClick="btnSignIn_Click" />
+            <asp:HyperLink runat="server" CssClass="hypertext" Text="Create an account." NavigateUrl="~/Start/Registration Page.aspx"></asp:HyperLink>
+            <%--<asp:CheckBox runat="server" CssClass="checkbox" ID="checkBoxShow" OnCheckedChanged="checkBoxShow_CheckedChanged"></asp:CheckBox>
+            <asp:Label runat="server" Text="Show password" CssClass="lblShowpassword" ID="lblShowPassword"></asp:Label>--%>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Invalid email!" CssClass="regExValidator" ControlToValidate="txtEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter password!" CssClass="reqFValidator" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
+
         </asp:Panel>
     </form>
     </body>
