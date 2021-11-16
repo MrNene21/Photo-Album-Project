@@ -11,9 +11,10 @@ namespace Project_2.Dashboard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Request.Cookies["session"] == null)
+            {
+                Response.Redirect("../Start/Login.aspx");
+            }
         }
-
-
     }
 }
