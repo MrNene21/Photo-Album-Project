@@ -20,7 +20,7 @@
   </head> 
 <body>
       <form id="form1" runat="server">
-          <div class="container-scroller">
+          <div class="container-scroller"></div>
               <!-- partial:partials/_navbar.html -->
               <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
                   <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
@@ -35,11 +35,11 @@
                       <ul class="navbar-nav ml-auto">
                           <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
                               <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                                  <img class="img-xs rounded-circle" src="assets/images/faces/profile/user.png" alt="Profile image">
+                                  <img class="img-xs rounded-circle" src="assets/images/faces/profile/user.png" alt="Profile image" />
                               </a>
                               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                                   <div class="dropdown-header text-center">
-                                      <img class="img-md rounded-circle" src="assets/images/faces/profile/user.png" alt="Profile image">
+                                      <img class="img-md rounded-circle" src="assets/images/faces/profile/user.png" alt="Profile image" />
                                       <p class="mb-1 mt-3 font-weight-semibold">Luyanda</p>
                                       <p class="font-weight-light text-muted mb-0">luyandanene50@gmail.com</p>
                                   </div>
@@ -57,36 +57,44 @@
                   <!-- partial:partials/_sidebar.html -->
                   <nav class="sidebar sidebar-offcanvas" id="sidebar">
                       <ul class="nav">
-                          <li class="nav-item nav-category">Main Menu</li>
-                          <li class="nav-item" runat="server" OnClick="DashboardClick">
-                              <a class="nav-link" href="index.html">
-                                  <i class="menu-icon typcn typcn-document-text"></i>
-                                  <span class="menu-title">View Photos</span>
-                              </a>
+                          <li class="nav-item nav-category">Functions</li>
+                          <li class="nav-item" runat="server" onclick="Upload">
+                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="Upload" OnClick="Upload">
+                              </asp:Button>
                           </li>
 
-                           <li class="nav-item" runat="server" OnClick="ShowClasses">
-                              <a class="nav-link" href="#">
-                                  <i class="menu-icon typcn typcn-document-text"></i>
-                                  <span class="menu-title">Upload</span>
-
-                              </a>
+                           <li class="nav-item" runat="server" onclick="Upload">
+                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="View Photos" OnClick="Upload">
+                              </asp:Button>
                           </li>
                            <li class="nav-item">
-                              <a class="nav-link" href="index.html">
-                                  <i class="menu-icon typcn typcn-document-text"></i>
-                                  <span class="menu-title">Share</span>
-                              </a>
+                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="Share" OnClick="Upload">
+                              </asp:Button>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" href="pages/forms/basic_elements.html">
-                                  <i class="menu-icon typcn typcn-shopping-bag"></i>
-                                  <span class="menu-title">da da da</span>
-                              </a>
+                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="Edit Properties" OnClick="Upload">
+                              </asp:Button>
                           </li>
                       </ul>
                   </nav>
               </div>
+
+          <div id="note" runat="server">
+        <div id="cookiesdirective" style="bottom: 0px;">
+            <div style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: rgb(0, 0, 0); opacity: 0.8; z-index: 9999;">
+                
+            </div>
+            <div style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; display: flex; align-items: center; z-index: 10000">
+                <div class="cookie-wrapper" style="position: relative; width: 100%; max-width: 500px; margin-right: auto; margin-left: auto; padding: 1rem; text-align: center; border-radius: .3rem; box-shadow: 0 10px 40px 0 rgba(0,0,0,0.2); color:#424a4d; background:rgba(234, 239, 241, 0.99);">
+                    <asp:FileUpload ID="FileUpload1" runat="server" style="margin-bottom: 30px"/>
+                    <div class="mbr-section-btn">
+                        <asp:Button style="margin:0;" runat="server" class="btn btn-sm btn-primary display-7" id="ok" Text="Upload" onclick="Upload">
+                        </asp:Button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
               <!-- page-body-wrapper ends -->
           <!-- container-scroller -->
           <!-- plugins:js -->

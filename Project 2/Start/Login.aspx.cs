@@ -23,7 +23,6 @@ namespace Project_2.Start
                 sqlCmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
                 int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
-
                 if (count == 1)
                 {
                     Session["Email"] = txtEmail.Text.Trim();
