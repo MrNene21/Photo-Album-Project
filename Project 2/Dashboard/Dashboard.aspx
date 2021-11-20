@@ -59,20 +59,20 @@
                       <ul class="nav">
                           <li class="nav-item nav-category">Functions</li>
                           <li class="nav-item" runat="server" onclick="Upload">
-                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="Upload" OnClick="Upload">
+                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="Upload" OnClick="UploadOpen">
                               </asp:Button>
                           </li>
 
                            <li class="nav-item" runat="server" onclick="Upload">
-                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="View Photos" OnClick="Upload">
+                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="View Photos" OnClick="UploadOpen">
                               </asp:Button>
                           </li>
                            <li class="nav-item">
-                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="Share" OnClick="Upload">
+                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="Share" OnClick="UploadOpen">
                               </asp:Button>
                           </li>
                           <li class="nav-item">
-                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="Edit Properties" OnClick="Upload">
+                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="Edit Properties" OnClick="UploadOpen">
                               </asp:Button>
                           </li>
                       </ul>
@@ -86,9 +86,9 @@
             </div>
             <div style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; display: flex; align-items: center; z-index: 10000">
                 <div class="cookie-wrapper" style="position: relative; width: 100%; max-width: 500px; margin-right: auto; margin-left: auto; padding: 1rem; text-align: center; border-radius: .3rem; box-shadow: 0 10px 40px 0 rgba(0,0,0,0.2); color:#424a4d; background:rgba(234, 239, 241, 0.99);">
-                    <asp:FileUpload ID="FileUpload1" runat="server" style="margin-bottom: 30px"/>
+                    <asp:FileUpload ID="FileUpload1" runat="server" style="margin-bottom: 30px" accept="image/*"/>
                     <div class="mbr-section-btn">
-                        <asp:Button style="margin:0;" runat="server" class="btn btn-sm btn-primary display-7" id="ok" Text="Upload" onclick="Upload">
+                        <asp:Button style="margin:0;" runat="server" class="btn btn-sm btn-primary display-7" id="ok" Text="Upload" onclick="UploadFile">
                         </asp:Button>
                     </div>
                 </div>

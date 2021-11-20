@@ -13,6 +13,20 @@ namespace Project_2.Start
     {
         string connectionString = @"Data Source=LUYANDA\SQLEXPRESS;Initial Catalog=LUYANDA;Integrated Security=True";
 
+        
+        private void CreateSession(string Email)
+        {
+            HttpCookie cookie = new HttpCookie("session");
+
+            cookie.Value = Email;
+            cookie.Secure = true;
+
+            //Set Expiration to auto log out user after some time
+            cookie.Expires = DateTime.Now.AddMinutes(30000);
+
+            Response.Cookies.Add(cookie);
+        }
+
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
@@ -30,7 +44,7 @@ namespace Project_2.Start
                     //Create session to keep user logged in
                     CreateSession(Session["Email"].ToString());
 
-                    Response.Redirect("../Dashboard/Dashboard.aspx");
+                    Response.Redirect("/Dashboard/Dashboard.aspx", false);
                 }
                 else
                 {
@@ -38,19 +52,6 @@ namespace Project_2.Start
                     Response.Write("<script>alert('Incorrect credentials!')</script>");
                 }
             }
-        }
-
-        private void CreateSession(string Email)
-        {
-            HttpCookie cookie = new HttpCookie("session");
-
-            cookie.Value = Email;
-            cookie.Secure = true;
-
-            //Set Expiration to auto log out user after some time
-            cookie.Expires = DateTime.Now.AddMinutes(30000);
-
-            Response.Cookies.Add(cookie);
         }
     }
 }
