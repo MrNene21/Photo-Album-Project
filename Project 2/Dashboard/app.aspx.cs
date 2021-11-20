@@ -81,8 +81,8 @@ namespace Project_2.Dashboard
                 {
                     while (reader.Read())
                     {
-                        Response.Write($"<script>alert('UserID: {reader.GetInt32(0)}')</script>");
-                    }
+                        returnValue = reader.GetInt32(0);
+                }
                 }
                 else
                 {
@@ -91,7 +91,6 @@ namespace Project_2.Dashboard
                 }
 
             }
-            //Response.Write($"<script>alert('value: {returnValue}')</script>");
 
             return returnValue;
         }
