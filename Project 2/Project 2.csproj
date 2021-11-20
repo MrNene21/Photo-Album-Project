@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app.aspx" />
     <Content Include="Dashboard\app\charts\chartjs.html" />
     <Content Include="Dashboard\app\forms\basic_elements.html" />
     <Content Include="Dashboard\app\icons\font-awesome.html" />
@@ -4694,6 +4695,7 @@
     <Content Include="Dashboard\assets\vendors\tinymce\tinymce.min.js" />
     <Content Include="Dashboard\Dashboard.aspx" />
     <Content Include="Images\mountain background.jpg" />
+    <Content Include="Start\goku.aspx" />
     <Content Include="Start\Login.aspx" />
     <Content Include="Start\Registration Page.aspx" />
     <Content Include="StyleSheets\StyleLogin.css" />
@@ -4701,6 +4703,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="app.aspx.cs">
+      <DependentUpon>app.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app.aspx.designer.cs">
+      <DependentUpon>app.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4709,6 +4718,13 @@
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Start\goku.aspx.cs">
+      <DependentUpon>goku.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Start\goku.aspx.designer.cs">
+      <DependentUpon>goku.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Start\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

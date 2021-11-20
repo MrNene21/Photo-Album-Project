@@ -9,18 +9,18 @@ using System.Web.UI.WebControls;
 
 namespace Project_2.Dashboard
 {
-    public partial class Dashboard : System.Web.UI.Page
+    public partial class app : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GetUserID();
+            //GetUserID();
 
             note.Visible = false;
 
-            if (Request.Cookies["session"] == null)
-            {
-                Response.Redirect("../Start/Login.aspx");
-            }
+            //if (Request.Cookies["session"] == null)
+            //{
+            //    Response.Redirect("../Start/Login.aspx");
+            //}
         }
 
         string connectionString = @"Data Source=LUYANDA\SQLEXPRESS;Initial Catalog=LUYANDA;Integrated Security=True";
@@ -87,7 +87,7 @@ namespace Project_2.Dashboard
                 {
                     //lblMessage.Text = "";
                     Response.Write("<script>alert('Incorrect credentials!')</script>");
-                    Response.Redirect("../Start/Login.aspx", false);
+                    Response.Redirect("/Start/Login.aspx", false);
                 }
             }
 

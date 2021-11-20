@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
-using System.Data;
 
 namespace Project_2.Start
 {
@@ -13,7 +12,7 @@ namespace Project_2.Start
     {
         string connectionString = @"Data Source=LUYANDA\SQLEXPRESS;Initial Catalog=LUYANDA;Integrated Security=True";
 
-        
+
         private void CreateSession(string Email)
         {
             HttpCookie cookie = new HttpCookie("session");
@@ -32,26 +31,36 @@ namespace Project_2.Start
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                string query = "SELECT COUNT(1) FROM UserRegistration WHERE Email=@Email AND Password=@Password";
+                string query = "SELECT Email FROM UserRegistration WHERE Email=@Email AND Password=@Password";
                 SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                 sqlCmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
-                int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
-                if (count == 1)
+                //int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
+
+                SqlDataReader reader = sqlCmd.ExecuteReader();
+
+                if (reader.HasRows)
                 {
-                    Session["Email"] = txtEmail.Text.Trim();
+                    while (reader.Read())
+                    {
+                        Response.Write($"<script>alert('User: {reader.GetString(0)}')</script>");
+                        //Create session to keep user logged in
 
-                    //Create session to keep user logged in
-                    CreateSession(Session["Email"].ToString());
+                        Session["Email"] = reader.GetString(0);
 
-                    Response.Redirect("/Dashboard/Dashboard.aspx", false);
+                        CreateSession(Session["Email"].ToString());
+
+                        Response.Redirect("../app.aspx", false);
+                    }
                 }
                 else
                 {
                     //lblMessage.Text = "";
                     Response.Write("<script>alert('Incorrect credentials!')</script>");
                 }
+                
             }
         }
+
     }
 }
