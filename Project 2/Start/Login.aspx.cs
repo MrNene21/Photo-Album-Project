@@ -50,7 +50,7 @@ namespace Project_2.Start
 
                         CreateSession(Session["Email"].ToString());
 
-                        Response.Redirect("../app.aspx", false);
+                        Response.Redirect("../Dashboard/app.aspx", false);
                     }
                 }
                 else

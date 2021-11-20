@@ -13,14 +13,14 @@ namespace Project_2.Dashboard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //GetUserID();
+            GetUserID();
 
             note.Visible = false;
 
-            //if (Request.Cookies["session"] == null)
-            //{
-            //    Response.Redirect("../Start/Login.aspx");
-            //}
+            if (Request.Cookies["session"] == null)
+            {
+                Response.Redirect("../Start/Login.aspx");
+            }
         }
 
         string connectionString = @"Data Source=LUYANDA\SQLEXPRESS;Initial Catalog=LUYANDA;Integrated Security=True";
@@ -54,7 +54,7 @@ namespace Project_2.Dashboard
             BinaryReader binaryReader = new BinaryReader(stream);
             byte[] bytes = binaryReader.ReadBytes((int)stream.Length);
 
-            string query = $"INSERT INTO Images(ImageData, UserID) VALUES(CONVERT(varbinary, '{bytes}'), {20})";
+            string query = $"INSERT INTO Images(ImageData, UserID) VALUES(CONVERT(varbinary, '{bytes}'), {GetUserID()})";
 
             SqlCommand myCommand = new SqlCommand(query, myConnection);
 
@@ -65,33 +65,35 @@ namespace Project_2.Dashboard
         }
         private int GetUserID()
         {
-            int uid;
+            int returnValue = 0;
+
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
 
-                string query = $"SELECT UserID FROM UserRegistration WHERE Email='{Request.Cookies["session"]}'";
+                string query = $"SELECT UserID FROM UserRegistration WHERE Email='{Request.Cookies["session"].Value}'";
 
                 SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
 
-                uid = Convert.ToInt32(sqlCmd.ExecuteScalar());
+                SqlDataReader reader = sqlCmd.ExecuteReader();
 
-
-                Response.Write($"<script>alert('{uid}')</script>");
-
-                if (uid == 1)
+                if (reader.HasRows)
                 {
-                    Response.Write("<script>alert('Success')</script>");
+                    while (reader.Read())
+                    {
+                        Response.Write($"<script>alert('UserID: {reader.GetInt32(0)}')</script>");
+                    }
                 }
                 else
                 {
                     //lblMessage.Text = "";
-                    Response.Write("<script>alert('Incorrect credentials!')</script>");
-                    Response.Redirect("/Start/Login.aspx", false);
+                    //Response.Write("<script>alert('Empty data')</script>");
                 }
-            }
 
-            return uid;
+            }
+            //Response.Write($"<script>alert('value: {returnValue}')</script>");
+
+            return returnValue;
         }
     }
 }
