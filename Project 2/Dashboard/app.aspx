@@ -68,11 +68,9 @@
                               </asp:Button>
                           </li>
                            <li class="nav-item">
-                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="Share" OnClick="UploadOpen">
-                              </asp:Button>
                           </li>
                           <li class="nav-item">
-                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="Edit Properties" OnClick="UploadOpen">
+                              <asp:Button runat="server" ID="btnEditProperties" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="Edit Properties" OnClick="EditProperies">
                               </asp:Button>
                           </li>
                       </ul>
@@ -93,20 +91,6 @@
                         </asp:TemplateField>
                     </Columns>
                     </asp:GridView>
-
-                  <asp:Label runat="server" Text="Edit image properties" ID="lblEditImprp"></asp:Label>
-                  <asp:TextBox runat="server" ID="txtName" placeholder="Name"></asp:TextBox>
-                  <asp:TextBox runat="server" ID="txtGeolocation" placeholder="Geolocation"></asp:TextBox>
-                  <asp:TextBox runat="server" ID="txtTags" placeholder="Tags"></asp:TextBox>
-                  <asp:TextBox runat="server" ID="txtCapturedDate" placeholder="Captured Date"></asp:TextBox>
-                  <asp:Button runat="server" Text="Update" ID="btnUpdate"></asp:Button>
-                  <asp:Button runat="server" Text="Add" ID="btnAdd"></asp:Button>
-
-                  <asp:Label runat="server" Text="Enter ImageID to delete image" ID="lblDeleteImg"></asp:Label>
-                  <asp:TextBox runat="server" ID="txtDelete"></asp:TextBox>
-                  <asp:Label runat="server" Text="Enter ImageID to remove properies" ID="lblRemv"></asp:Label>
-                  <asp:TextBox runat="server" ID="txtRemoveProp"></asp:TextBox>
-                  <asp:TextBox runat="server" ID="txtSearch"></asp:TextBox>
 
               </div>
 

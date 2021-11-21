@@ -1,0 +1,62 @@
+﻿body {
+}
+.lblEditImgprp {
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top:25px;
+    margin-left:300px
+}
+.txtName {
+    width: 195px;
+    height: 30px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.txtGeolocation {
+    width: 195px;
+    height: 30px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.txtTags {
+    width: 195px;
+    height: 30px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.txtCapturedDate {
+    width: 195px;
+    height: 30px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+btnAdd {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    background-color: deepskyblue;
+    color: black;
+    padding: 9px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0 auto;
+}
+.btnUpdate {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    background-color: deepskyblue;
+    color: black;
+    padding: 9px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0 auto;
+}

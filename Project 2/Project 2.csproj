@@ -132,6 +132,7 @@
     <Content Include="Dashboard\assets\auth\vendor\select2\select2.min.js" />
     <Content Include="Dashboard\assets\css\flax\login-reg.css" />
     <Content Include="Dashboard\assets\css\flax\style.css" />
+    <Content Include="Dashboard\assets\css\flax\styleControls%28pro&amp;pImg%29.css" />
     <Content Include="Dashboard\assets\css\flax\wickedcss.min.css" />
     <Content Include="Dashboard\assets\css\shared\style.css" />
     <Content Include="Dashboard\assets\fonts\Roboto\LICENSE.txt" />
@@ -4693,6 +4694,7 @@
     <Content Include="Dashboard\assets\vendors\tinymce\tinymce.jquery.min.js" />
     <Content Include="Dashboard\assets\vendors\tinymce\tinymce.js" />
     <Content Include="Dashboard\assets\vendors\tinymce\tinymce.min.js" />
+    <Content Include="Dashboard\Core functions.aspx" />
     <Content Include="Images\mountain background.jpg" />
     <Content Include="Start\Login.aspx" />
     <Content Include="Start\Registration Page.aspx" />
@@ -4707,6 +4709,13 @@
     </Compile>
     <Compile Include="Dashboard\app.aspx.designer.cs">
       <DependentUpon>app.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Core functions.aspx.cs">
+      <DependentUpon>Core functions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Core functions.aspx.designer.cs">
+      <DependentUpon>Core functions.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Start\Login.aspx.cs">

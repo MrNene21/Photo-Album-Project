@@ -19,23 +19,6 @@ namespace Project_2.Dashboard
 
             note.Visible = false;
 
-            lblEditImprp.Visible = false;
-            txtName.Visible = false;
-            txtGeolocation.Visible = false;
-            txtTags.Visible = false;
-            txtCapturedDate.Visible = false;
-            btnAdd.Visible = false;
-            btnUpdate.Visible = false;
-
-            lblDeleteImg.Visible = false;
-            txtDelete.Visible = false;
-            txtDelete.Visible = false;
-
-            lblRemv.Visible = false;
-            txtRemoveProp.Visible = false;
-
-            txtSearch.Visible = false;
-
 
             if (Request.Cookies["session"] == null)
             {
@@ -91,15 +74,16 @@ namespace Project_2.Dashboard
                 Response.Write("<script>alert('No file selected')</script>");
             }
         }
-        private int GetUserID()
+        public int GetUserID()
         {
+            var value = Request.Cookies["session"].Value;
             int returnValue = 0;
 
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
 
-                string query = $"SELECT UserID FROM UserRegistration WHERE Email='{Request.Cookies["session"].Value}'";
+                string query = $"SELECT UserID FROM UserRegistration WHERE Email='{value}'";
 
                 SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
 
@@ -127,7 +111,7 @@ namespace Project_2.Dashboard
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                using (SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Images", conn))
+                using (SqlDataAdapter sda = new SqlDataAdapter($"SELECT * FROM Images WHERE UserID = {GetUserID()}", conn))
                 {
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
@@ -135,6 +119,11 @@ namespace Project_2.Dashboard
                     gvImages.DataBind();
                 }
             }
+        }
+
+        protected void EditProperies(object sender, EventArgs e)
+        {
+            Response.Redirect("Core functions.aspx");
         }
 
         protected void grd_RowDataBound(object sender, GridViewRowEventArgs e)
