@@ -94,6 +94,20 @@
                     </Columns>
                     </asp:GridView>
 
+                  <asp:Label runat="server" Text="Edit image properties"></asp:Label>
+                  <asp:TextBox runat="server" ID="txtName" placeholder="Name"></asp:TextBox>
+                  <asp:TextBox runat="server" ID="txtGeolocation" placeholder="Geolocation"></asp:TextBox>
+                  <asp:TextBox runat="server" ID="txtTags" placeholder="Tags"></asp:TextBox>
+                  <asp:TextBox runat="server" ID="txtCapturedDate " placeholder="Captured Date"></asp:TextBox>
+                  <asp:Button runat="server" Text="Update" ID="btnUpdate"></asp:Button>
+                  <asp:Button runat="server" Text="Add" ID="btnAdd"></asp:Button>
+
+                  <asp:Label runat="server" Text="Enter ImageID to delete image" ID="lblDeleteImg"></asp:Label>
+                  <asp:TextBox runat="server" ID="txtDelete"></asp:TextBox>
+                  <asp:Label runat="server" Text="Enter ImageID to remove properies" ID="Label1"></asp:Label>
+                  <asp:TextBox runat="server" ID="txtRemoveProp"></asp:TextBox>
+                  <asp:TextBox runat="server" ID="txtSearch"></asp:TextBox>
+
               </div>
 
           <div id="note" runat="server">
