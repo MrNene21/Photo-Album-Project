@@ -111,15 +111,17 @@ namespace Project_2.Dashboard
             }
         }
 
-        //protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
-        //{
-        //    if (e.Row.RowType == DataControlRowType.DataRow)
-        //    {
-        //        DataRowView dr = (DataRowView)e.Row.DataItem;
-        //        string imageUrl = "data:image/png;base64," + Convert.ToBase64String((byte[])dr["ImageData"]);
-        //        (e.Row.FindControl("Image1") as Image).ImageUrl = imageUrl;
-        //    }
-        //}
+        protected void grd_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                System.Web.UI.HtmlControls.HtmlImage imageControl = (System.Web.UI.HtmlControls.HtmlImage)e.Row.FindControl("imageControl");
+                if (((DataRowView)e.Row.DataItem)["imagedata"] != DBNull.Value)
+                {
+                    imageControl.Src = "data:image/png;base64," + Convert.ToBase64String((byte[])(((DataRowView)e.Row.DataItem))["ImageData"]);
+                }
+            }
+        }
 
     }
 }

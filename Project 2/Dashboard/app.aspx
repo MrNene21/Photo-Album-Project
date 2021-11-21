@@ -78,7 +78,7 @@
                       </ul>
                   </nav>
 
-                  <asp:GridView ID="gvImages" runat="server" AutoGenerateColumns="false">
+                  <asp:GridView ID="gvImages" runat="server" AutoGenerateColumns="false" OnRowDataBound="grd_RowDataBound">
                     <Columns>      
                         <asp:BoundField DataField="ImageID" HeaderText="Image Id" />
                         <asp:BoundField DataField="Name" HeaderText="Name" />
@@ -88,8 +88,7 @@
                         <asp:BoundField DataField="UserID" HeaderText="UserID" />
                         <asp:TemplateField HeaderText="Image">
                             <ItemTemplate>
-                                <asp:Image ID="Image1" runat="server" Height="100px" Width="100px" 
-                                    ImageUrl='<%#"data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("ImageData"))%>'/>
+                                <img src='<%# Eval("ImageData") %>' id="imageControl" runat="server" height="100" width="100" />
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
