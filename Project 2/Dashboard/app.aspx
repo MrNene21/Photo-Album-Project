@@ -64,7 +64,7 @@
                           </li>
 
                            <li class="nav-item" runat="server" onclick="Upload">
-                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="View Photos" OnClick="UploadOpen">
+                              <asp:Button runat="server" class="nav-link menu-icon typcn typcn-document-text" href="#" Text="View Photos" OnClick="ViewPhotos">
                               </asp:Button>
                           </li>
                            <li class="nav-item">
@@ -77,6 +77,24 @@
                           </li>
                       </ul>
                   </nav>
+
+                  <asp:GridView ID="gvImages" runat="server" AutoGenerateColumns="false">
+                    <Columns>      
+                        <asp:BoundField DataField="ImageID" HeaderText="Image Id" />
+                        <asp:BoundField DataField="Name" HeaderText="Name" />
+                        <asp:BoundField DataField="Geolocation" HeaderText="Geolocation" />
+                        <asp:BoundField DataField="Tags" HeaderText="Tags" />
+                        <asp:BoundField DataField="CapturedDate" HeaderText="Captured Date" />
+                        <asp:BoundField DataField="UserID" HeaderText="UserID" />
+                        <asp:TemplateField HeaderText="Image">
+                            <ItemTemplate>
+                                <asp:Image ID="Image1" runat="server" Height="100px" Width="100px" 
+                                    ImageUrl='<%#"data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("ImageData"))%>'/>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                    </asp:GridView>
+
               </div>
 
           <div id="note" runat="server">

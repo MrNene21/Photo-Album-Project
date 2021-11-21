@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
 
 namespace Project_2.Dashboard
 {
@@ -23,7 +25,7 @@ namespace Project_2.Dashboard
             }
         }
 
-        string connectionString = @"Data Source=LUYANDA\SQLEXPRESS;Initial Catalog=LUYANDA;Integrated Security=True";
+        public string connectionString = @"Data Source=LUYANDA\SQLEXPRESS;Initial Catalog=LUYANDA;Integrated Security=True";
 
         protected void UploadOpen(object sender, EventArgs e)
         {
@@ -94,5 +96,30 @@ namespace Project_2.Dashboard
 
             return returnValue;
         }
+
+        protected void ViewPhotos(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Images", conn))
+                {
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    gvImages.DataSource = dt;
+                    gvImages.DataBind();
+                }
+            }
+        }
+
+        //protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
+        //{
+        //    if (e.Row.RowType == DataControlRowType.DataRow)
+        //    {
+        //        DataRowView dr = (DataRowView)e.Row.DataItem;
+        //        string imageUrl = "data:image/png;base64," + Convert.ToBase64String((byte[])dr["ImageData"]);
+        //        (e.Row.FindControl("Image1") as Image).ImageUrl = imageUrl;
+        //    }
+        //}
+
     }
 }
