@@ -19,6 +19,24 @@ namespace Project_2.Dashboard
 
             note.Visible = false;
 
+            lblEditImprp.Visible = false;
+            txtName.Visible = false;
+            txtGeolocation.Visible = false;
+            txtTags.Visible = false;
+            txtCapturedDate.Visible = false;
+            btnAdd.Visible = false;
+            btnUpdate.Visible = false;
+
+            lblDeleteImg.Visible = false;
+            txtDelete.Visible = false;
+            txtDelete.Visible = false;
+
+            lblRemv.Visible = false;
+            txtRemoveProp.Visible = false;
+
+            txtSearch.Visible = false;
+
+
             if (Request.Cookies["session"] == null)
             {
                 Response.Redirect("../Start/Login.aspx");

@@ -33,6 +33,15 @@ namespace Project_2.Dashboard
         protected global::System.Web.UI.WebControls.GridView gvImages;
 
         /// <summary>
+        /// lblEditImprp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEditImprp;
+
+        /// <summary>
         /// txtName control.
         /// </summary>
         /// <remarks>
@@ -105,13 +114,13 @@ namespace Project_2.Dashboard
         protected global::System.Web.UI.WebControls.TextBox txtDelete;
 
         /// <summary>
-        /// Label1 control.
+        /// lblRemv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblRemv;
 
         /// <summary>
         /// txtRemoveProp control.
