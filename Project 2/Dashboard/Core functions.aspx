@@ -30,14 +30,6 @@
         .auto-style9 {
             width: 26%;
         }
-        .auto-style10 {
-            height: 66px;
-            width: 204px;
-        }
-        .auto-style11 {
-            width: 988px;
-            height: 66px;
-        }
         .auto-style12 {
             width: 204px;
             height: 43px;
@@ -69,6 +61,22 @@
             width: 988px;
             height: 26px;
         }
+        .auto-style19 {
+            height: 31px;
+            width: 204px;
+        }
+        .auto-style20 {
+            width: 988px;
+            height: 31px;
+        }
+        .auto-style21 {
+            width: 204px;
+            height: 33px;
+        }
+        .auto-style22 {
+            width: 988px;
+            height: 33px;
+        }
     </style>
 </head>
 <body>
@@ -76,18 +84,18 @@
         <table class="auto-style9">
             <tr>
                 <td class="auto-style6">
-                    <asp:Label ID="lblEditPrp" runat="server" Font-Underline="False" Text="Edit Properti for image with ImageID:" Font-Bold="True"></asp:Label>
+                    <asp:Label ID="lblEditPrp" runat="server" Font-Underline="False" Text="Edit Property for image uisng ImageID:" Font-Bold="True"></asp:Label>
                 </td>
                 <td class="auto-style7">
                     <asp:TextBox ID="txtEdit" runat="server" Width="45px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style8">
+                <td class="auto-style21">
                     <asp:TextBox ID="txtName" runat="server" placeholder="Enter name"></asp:TextBox>
                 </td>
-                <td class="auto-style5">
-                    <asp:Button ID="btnUpdate" runat="server" Text="Update" />
+                <td class="auto-style22">
+                    <asp:Button ID="btnAdd" runat="server" Text="Add/Update" OnClick="btnAdd_Click" />
                 </td>
             </tr>
             <tr>
@@ -95,8 +103,7 @@
                     <asp:TextBox ID="txtGeolocation" runat="server" placeholder="Enter geolocation"></asp:TextBox>
                 </td>
                 <td class="auto-style5">
-                    <asp:Button ID="btnAdd" runat="server" Text="Add" />
-                </td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style8">
@@ -111,8 +118,14 @@
                 <td class="auto-style5">&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style10"></td>
-                <td class="auto-style11"></td>
+                <td class="auto-style19">
+                    <asp:TextBox ID="txtCapturedBy" runat="server" placeholder="Captured by"></asp:TextBox>
+                </td>
+                <td class="auto-style20"></td>
+            </tr>
+            <tr>
+                <td class="auto-style19">&nbsp;</td>
+                <td class="auto-style20">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style8">
@@ -137,7 +150,7 @@
                     <asp:Label ID="Label2" runat="server" Text="Enter ImageID to remove properties" Font-Bold="True"></asp:Label>
                 </td>
                 <td class="auto-style5">
-                    <asp:Button ID="btnRemove" runat="server" Text="Remove properties" />
+                    <asp:Button ID="btnRemove" runat="server" Text="Remove properties" OnClick="btnRemove_Click1" />
                 </td>
             </tr>
             <tr>
@@ -169,6 +182,7 @@
                         <asp:BoundField DataField="Geolocation" HeaderText="Geolocation" />
                         <asp:BoundField DataField="Tags" HeaderText="Tags" />
                         <asp:BoundField DataField="CapturedDate" HeaderText="Captured Date" />
+                        <asp:BoundField DataField="CapturedBy" HeaderText="Captured By" />
                         <asp:BoundField DataField="UserID" HeaderText="UserID" />
                         <asp:TemplateField HeaderText="Image">
                             <ItemTemplate>

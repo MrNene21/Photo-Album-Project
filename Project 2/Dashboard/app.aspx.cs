@@ -67,6 +67,8 @@ namespace Project_2.Dashboard
 
                 //myinfo.Text = "connection to db is made";
                 myConnection.Close();
+
+                Response.Write("<script>alert('Uploaded successfully')</script>");
             }
             else
             {
