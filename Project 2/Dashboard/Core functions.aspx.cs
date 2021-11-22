@@ -12,7 +12,14 @@ namespace Project_2.Dashboard
 {
     public partial class Edit : System.Web.UI.Page
     {
-        public string connectionString = @"Data Source=LUYANDA\SQLEXPRESS;Initial Catalog=LUYANDA;Integrated Security=True";
+        string sql;
+        SqlDataAdapter adapter;
+        DataSet ds;
+        string connectionString = @"Data Source=LUYANDA\SQLEXPRESS;Initial Catalog=LUYANDA;Integrated Security=True";
+
+
+        SqlCommand command;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             app app_ = new app();
@@ -80,6 +87,50 @@ namespace Project_2.Dashboard
             }
 
             return returnValue;
+        }
+
+        protected void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            sql = "SELECT * FROM Images WHERE Name or Tags '%" + txtSearch.Text + "%'";
+            adapter = new SqlDataAdapter(sql, connectionString);
+            ds = new DataSet();
+            adapter.Fill(ds, "Images");
+
+            gvImages.DataSource = ds;
+            gvImages.DataMember = "Images";
+            gvImages.DataBind();
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+           using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                
+                adapter = new SqlDataAdapter();
+                sql = @"DELETE FROM Images WHERE ImageID = '" + txtImgID.Text + "'";
+                command = new SqlCommand(sql, con);
+
+                ds = new DataSet();
+
+                adapter.DeleteCommand = command;
+                adapter.DeleteCommand.ExecuteNonQuery();
+
+                con.Close();
+
+            }
+
+            //view new datagrid
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter($"SELECT * FROM Images WHERE UserID = {GetUserID()}", conn))
+                {
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    gvImages.DataSource = dt;
+                    gvImages.DataBind();
+                }
+            }
         }
     }
 }

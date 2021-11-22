@@ -24,15 +24,6 @@ namespace Project_2.Dashboard
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// gvImages control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvImages;
-
-        /// <summary>
         /// lblEditPrp control.
         /// </summary>
         /// <remarks>
@@ -40,6 +31,15 @@ namespace Project_2.Dashboard
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEditPrp;
+
+        /// <summary>
+        /// txtEdit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEdit;
 
         /// <summary>
         /// txtName control.
@@ -87,13 +87,13 @@ namespace Project_2.Dashboard
         protected global::System.Web.UI.WebControls.TextBox txtTags;
 
         /// <summary>
-        /// txtCapturedData control.
+        /// txtCapturedDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCapturedData;
+        protected global::System.Web.UI.WebControls.TextBox txtCapturedDate;
 
         /// <summary>
         /// Label1 control.
@@ -141,6 +141,15 @@ namespace Project_2.Dashboard
         protected global::System.Web.UI.WebControls.Button btnRemove;
 
         /// <summary>
+        /// TextBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+
+        /// <summary>
         /// Label3 control.
         /// </summary>
         /// <remarks>
@@ -148,6 +157,24 @@ namespace Project_2.Dashboard
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
+
+        /// <summary>
+        /// gvImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvImages;
+
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
         /// txtSearch control.

@@ -94,7 +94,7 @@ namespace Project_2.Dashboard
                     while (reader.Read())
                     {
                         returnValue = reader.GetInt32(0);
-                }
+                    }
                 }
                 else
                 {
