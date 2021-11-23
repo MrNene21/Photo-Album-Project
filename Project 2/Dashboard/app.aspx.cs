@@ -17,6 +17,7 @@ namespace Project_2.Dashboard
         {
             GetUserID();
 
+
             note.Visible = false;
 
 
@@ -40,40 +41,47 @@ namespace Project_2.Dashboard
 
         private void ChooseFile()
         {
-            if(FileUpload1.PostedFile != null)
+            try
             {
-                string UpPath = Server.MapPath("~/UploadedUserFiles");
+                if (FileUpload1.PostedFile != null)
+                {
+                    string UpPath = Server.MapPath("~/UploadedUserFiles");
 
-                string imgName = FileUpload1.FileName;
-                //string imgPath = "UploadedUserFiles/" + imgName;
+                    string imgName = FileUpload1.FileName;
+                    //string imgPath = "UploadedUserFiles/" + imgName;
 
-                SqlConnection myConnection = new SqlConnection(connectionString);
+                    SqlConnection myConnection = new SqlConnection(connectionString);
 
-                myConnection.Open();
+                    myConnection.Open();
 
-                //string ArticleImg = "UploadedUserFiles/" + FileUpload1.FileName;
+                    //string ArticleImg = "UploadedUserFiles/" + FileUpload1.FileName;
 
-                HttpPostedFile postedFile = FileUpload1.PostedFile;
+                    HttpPostedFile postedFile = FileUpload1.PostedFile;
 
-                Stream stream = postedFile.InputStream;
-                BinaryReader binaryReader = new BinaryReader(stream);
-                byte[] bytes = binaryReader.ReadBytes((int)stream.Length);
+                    Stream stream = postedFile.InputStream;
+                    BinaryReader binaryReader = new BinaryReader(stream);
+                    byte[] bytes = binaryReader.ReadBytes((int)stream.Length);
 
-                string query = $"INSERT INTO Images(ImageData, UserID) VALUES(CONVERT(varbinary, '{bytes}'), {GetUserID()})";
+                    string query = $"INSERT INTO Images(ImageData, UserID) VALUES(CONVERT(varbinary, '{bytes}'), {GetUserID()})";
 
-                SqlCommand myCommand = new SqlCommand(query, myConnection);
+                    SqlCommand myCommand = new SqlCommand(query, myConnection);
 
-                myCommand.ExecuteNonQuery();
+                    myCommand.ExecuteNonQuery();
 
-                //myinfo.Text = "connection to db is made";
-                myConnection.Close();
+                    //myinfo.Text = "connection to db is made";
+                    myConnection.Close();
 
-                Response.Write("<script>alert('Uploaded successfully')</script>");
+                    Response.Write("<script>alert('Uploaded successfully')</script>");
+                }
+                else
+                {
+                    //no file selected
+                    Response.Write("<script>alert('No file selected')</script>");
+                }
             }
-            else
+            catch(Exception ex)
             {
-                //no file selected
-                Response.Write("<script>alert('No file selected')</script>");
+                Console.WriteLine(ex.Message);
             }
         }
         public int GetUserID()

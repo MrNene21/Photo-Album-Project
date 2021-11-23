@@ -133,49 +133,49 @@ namespace Project_2.Dashboard
             }
         }
 
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-            SqlConnection con = new SqlConnection(connectionString);
-            con.Open();
+        //protected void btnAdd_Click(object sender, EventArgs e)
+        //{
+        //    SqlConnection con = new SqlConnection(connectionString);
+        //    con.Open();
 
-            int ID;
-            ID = int.Parse(txtEdit.Text);
-            string name = txtName.Text;
-            string geolocation = txtGeolocation.Text;
-            string tags = txtTags.Text;
-            string capturedDate = txtCapturedDate.Text;
-            string capturedBy = txtCapturedBy.Text;
+        //    int ID;
+        //    ID = int.Parse(txtEdit.Text.Trim());
+        //    string name = txtName.Text;
+        //    string geolocation = txtGeolocation.Text;
+        //    string tags = txtTags.Text;
+        //    string capturedDate = txtCapturedDate.Text;
+        //    string capturedBy = txtCapturedBy.Text;
 
-            sql = "UPDATE Images SET Name=@Name, Geolocation=@Geolocation, Tags=@Tags, CapturedDate=@CapturedDate, CapturedBy=@CapturedBy WHERE UserID=@UserID";
+        //    sql = "UPDATE Images SET Name=@Name, Geolocation=@Geolocation, Tags=@Tags, CapturedDate=@CapturedDate, CapturedBy=@CapturedBy WHERE UserID=@UserID";
 
 
-            adapter = new SqlDataAdapter();
-            command = new SqlCommand(sql, con);
+        //    adapter = new SqlDataAdapter();
+        //    command = new SqlCommand(sql, con);
 
-            command.Parameters.AddWithValue("@UserID", ID);
-            command.Parameters.AddWithValue("@Name", name);
-            command.Parameters.AddWithValue("@Geolocation", geolocation);
-            command.Parameters.AddWithValue("@Tags", tags);
-            command.Parameters.AddWithValue("@CapturedDate", capturedDate);
-            command.Parameters.AddWithValue("@CapturedBy", capturedBy);
+        //    command.Parameters.AddWithValue("@UserID", ID);
+        //    command.Parameters.AddWithValue("@Name", name);
+        //    command.Parameters.AddWithValue("@Geolocation", geolocation);
+        //    command.Parameters.AddWithValue("@Tags", tags);
+        //    command.Parameters.AddWithValue("@CapturedDate", capturedDate);
+        //    command.Parameters.AddWithValue("@CapturedBy", capturedBy);
 
-            command.ExecuteNonQuery();
-            con.Close();
+        //    command.ExecuteNonQuery();
+        //    con.Close();
 
-            Response.Write("<script>alert('Properties added and updated')</script>");
+        //    Response.Write("<script>alert('Properties added and updated')</script>");
 
-            //view new datagrid
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                using (SqlDataAdapter sda = new SqlDataAdapter($"SELECT * FROM Images WHERE UserID = {GetUserID()}", conn))
-                {
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    gvImages.DataSource = dt;
-                    gvImages.DataBind();
-                }
-            }
-        }
+        //    //view new datagrid
+        //    using (SqlConnection conn = new SqlConnection(connectionString))
+        //    {
+        //        using (SqlDataAdapter sda = new SqlDataAdapter($"SELECT * FROM Images WHERE UserID = {GetUserID()}", conn))
+        //        {
+        //            DataTable dt = new DataTable();
+        //            sda.Fill(dt);
+        //            gvImages.DataSource = dt;
+        //            gvImages.DataBind();
+        //        }
+        //    }
+        //}
 
         protected void btnRemove_Click1(object sender, EventArgs e)
         {

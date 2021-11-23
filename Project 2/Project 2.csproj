@@ -5003,6 +5003,7 @@
     <Content Include="Dashboard\assets\vendors\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <Content Include="Dashboard\assets\vendors\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\luyandaphotoapp - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

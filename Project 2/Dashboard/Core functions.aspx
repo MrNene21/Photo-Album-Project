@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link rel="stylesheet" href="assets/css/flax/styleControls(pro&pImg).css" />
     <title>Core functions</title>
     <style type="text/css">
@@ -95,7 +96,7 @@
                     <asp:TextBox ID="txtName" runat="server" placeholder="Enter name"></asp:TextBox>
                 </td>
                 <td class="auto-style22">
-                    <asp:Button ID="btnAdd" runat="server" Text="Add/Update" OnClick="btnAdd_Click" />
+                    <asp:Button ID="btnAdd" runat="server" Text="Add/Update" />
                 </td>
             </tr>
             <tr>
